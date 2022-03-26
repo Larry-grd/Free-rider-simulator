@@ -4,7 +4,7 @@ ENGG1340 GP
 Team members:
 
 Gao Rundong 3035951349
-Zhao Wenrui 3035930448
+Chiu Man Yui 3035930448
 
 
 Game name: Free rider Simulator
