@@ -41,17 +41,23 @@ List of features:
 5. High Favourability will make you popular among your classmates and buring you good luck.
 (random game sets or events)
 6. Too high or too low with these special values will randomly occur special events (good and bad).
-(random game set or events)
+(random game set or events using random number generator to simulate the possibilities, and also use multiple files to make different events)
 7. You can save your game by enter "/quit" to save your game.
 (save the ID, current Sanity, Intelligence and Favourability as well as the progress of the game. )
 8. You can load your unfinished game by enter "/load" to load an existing game.
 (load information saved in the saving file and load the game.)
+9. The game will be linear and a round number will be shown. There are total 40 round.
+
+
 
 How each coding element from 1 to 5 listed under the coding requirements have supported your features.
-1. Generation of random game sets or events
-2. Data structures for storing game status
+1. Generation of random game sets or events(random events during the game and different options.)
+2. Data structures for storing game status(for special value such as Sanity: store in integer, for ID: store in int array)
 3. Dynamic memory management
+(e.g. dynamic memory allocation performed by "new" allows to assign memory during runtime using any variable value as size, therefore easy to allocate memory to these special events, when the event has pass, the memory is released and can be used again.)
 4. File input/output (e.g., for loading/saving game status)
-5. Program codes in multiple files
+(folder named "saving" will contain all unfinished game with an index, game status is stored under each saving folder. When you want to load an existed game, the information of the saving game status will be input to the game and the game will resume.)
+5. Program codes in multiple files.
+(different events are coded in different files.)
 
  
