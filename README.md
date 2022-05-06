@@ -9,6 +9,12 @@ Chiu Man Yui 3035930448
 
 Game name: Free rider Simulator
 
+How to complie and play the game?
+
+*1. Set "Free-rider-simulator" as your working directory.
+*2. Type in "make freerider_simulator".
+*3. Type in "./freerider_simulator" and follow the instructions in the game.
+
 
 Game Background:
 
@@ -20,33 +26,52 @@ Try your best not to fail the course and balance your study and life.
 
 Game rule:
 
-1. In this game, the aim is not to fail the course.
-2. This game is a RPG, you can make your decisions from different options in each round.
-3. Every decision you make will effect the game by changing some special values.
-4. The total grade of the course is separated into four parts: midterm(25%), assignment(15%), group project(20%) and final(40%).
-5. In order to pass the course, the total grade should be > 60%. (for hardcore level is > 80%).
-6. After a certain number of rounds, the game will end, and the game result will show out.
+1. In this game, the aim is not to fail the course. We have 5 different grades in total: A, B, C, D, F, which 'F' leads to fail.(A: score>=90; B: score>=85; C: score>=80; D: score>=75; F: score<75).
+
+2. This game is a RPG, you can make your decisions from different options in each game round. 
+
+3. Every decision you make will effect the game by changing some special values. (Sanity, Intelligence, Favourability).
+You can choose to study/play/rest during during the game.
+* 'study' will slightly increase player's intelligence and decrease player's sanity and favourability.
+* 'play' will slightly increase player's sanity and favourability and decrease player's intelligence.
+* 'rest' will slightly increase player's sanity and decrease player's intelligence and favourability. 
+e.g. you choose 'study' then you will get some intelligence point and lose some sanity point (the amount of gain or loss is random and it is based on the ratio of the Current_value/Maximum_value.)
+
+4. The total score of the course is 100 and it is separated into four parts: midterm(25%), assignment(15%), group project(20%) and final(40%). These events will occur at some specific rounds of game.
+
+5. Some special events may occur after each game round when Sanity/Intelligence/Favourability is too high or too low. Special events will bring player positive/negative effects and it is randomly decided.
+
+6. In order to win the game, the total grade should be >= 75% at the end of the game. However, pursue a higher score will greatly improve the playing experience and you should try you best to get higher grade.
+
+7. After a certain number of rounds, the game will end, and the game result will show out.
+
+
 
 
 List of features:
 
 1. You have several important personal charactors in the game (ID, Sanity, Intelligence, Favourability).
 (Store as int type variable )
-2. The maximum value of Sanity, Intelligence and Favourability will be affected by a random generated array of integers (ID).
-(Random generate an array of integer in a given range for the ID, )
-3. High Sanity value will make you feel more energetic and low Sanity will lead to anxiety.
-(random game sets or enents)
-4. High Intelligence will make you study more efficient and low Intelligence will slow down your progress.
+
+2. The maximum value of Sanity, Intelligence and Favourability will be affected by a random generated integers (ID).
+
+3. High Sanity value will make you feel more energetic and low Sanity will lead to anxiety. This will effect the amount of penalty on Intelligence (random game sets or enents)
+
+4. High Intelligence will make you study more efficient and low Intelligence will slow down your progress.This will effect the amount of penalty on Sanity
 (random game sets or events)
-5. High Favourability will make you popular among your classmates and buring you good luck.
+
+5. High Favourability will make you popular among your classmates and buring you good luck.This will effect the amount of penalty on Intelligence and Sanity
 (random game sets or events)
-6. Too high or too low with these special values will randomly occur special events (good and bad).
-(random game set or events using random number generator to simulate the possibilities, and also use multiple files to make different events)
-7. You can save your game by enter "/quit" to save your game.
+
+6. Too high or too low with these special values will randomly occur special events (good or bad).
+(random game set or events using random number generator to simulate the possibilities, and also use file to store different events)
+
+7. You can save your game by enter "/quit_save" to save your game or you can quit the game without saving it by enter "/quit" during the game.
 (save the ID, current Sanity, Intelligence and Favourability as well as the progress of the game. )
-8. You can load your unfinished game by enter "/load" to load an existing game.
-(load information saved in the saving file and load the game.)
-9. The game will be linear and a round number will be shown. There are total 40 round.
+
+8. You can load your unfinished game at the game menu, if the saving file is empty, the game will ask you to create a new game, else it will load the existing game from save.txt.
+
+9. The game will be linear and a round number will be shown. There are total 40 rounds of game. Every round the status of the player will be print out to show the name of the player, current Sanity, Intelligence, Favourability, number of round.
 
 
 
