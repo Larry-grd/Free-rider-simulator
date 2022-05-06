@@ -9,6 +9,7 @@
 #include "game_initialise.h" // function to print out the status of player.
 #include "player.h" // build a struct to store data.
 #include "save.h" // function to save current game.
+#include "random_task.h" // function for random special events.
 //#include "new_game.h" // function to create a new game.
 
 //#include "story.h" // function to print out story of the game.
@@ -30,7 +31,7 @@ void new_game() {
     p.C_sanity = 2*p.M_sanity/3;
     p.C_intelligence = 2*p.M_intelligence/3;
     p.C_favourability = 2*p.M_favourability/3;
-    p.day = 0;
+    p.day = 1;
     p.result = 0;
     cout << "====================================" << endl;
     cout << "YOUR CHARACTOR'S NAME? " << endl;
@@ -105,6 +106,7 @@ void choose_option() {
             quit();
             break;
         default:
+            cout << "Your command is not found! System closed..." << endl;
             quit();
     }
 }
@@ -136,41 +138,53 @@ void subtract_value(int min, int &value, int n) {
     } else value = min;
 }
 
-// function to detect special day.
+// function to detect special day.(assignments, exams, group project)
 void special_day(player &p) {
     double n = 0;
-    if (p.day == 15) {
-        cout << "\nDeadline of Assignment 1\n" << endl;
-        n = 5 * (p.C_intelligence/((double)p.M_intelligence));
-        p.result += n;
-        cout << "\nBased on your performance, you get: 5/" << n << endl;
-    } else if (p.day == 20) {
-        cout << "\nToday is the midterm test!\n" << endl;
-        n = 15 * (p.C_intelligence/((double)p.M_intelligence)) + 10 * (p.C_sanity/((double)p.M_sanity));
-        p.result += n;
-        cout << "\nBased on your performance, you get: 25/" << n << endl;
-    } else if (p.day == 25) {
-        cout << "\nDeadline of Assignment 2\n" << endl;
-        n = 5 * (p.C_intelligence/((double)p.M_intelligence));
-        p.result += n;
-        cout << "\nBased on your performance, you get: 5/" << n << endl;
-    } else if (p.day == 30) {
-        cout << "\nDeadline of Group project\n" << endl;
-        n = 15 * (p.C_favourability/((double)p.M_favourability)) + 5 * (p.C_intelligence/((double)p.M_intelligence));
-        p.result += n;
-        cout << "\nBased on your performance, you get: 20/" << n << endl;
-    } else if (p.day == 35) {
-        cout << "\nDeadline of Assignment 3\n" << endl;
-        n = 5 * (p.C_intelligence/((double)p.M_intelligence));
-        p.result += n;
-        cout << "\nBased on your performance, you get: 5/" << n << endl;
-    } else if (p.day == 40) {
-        cout << "\nToday is the final exam!\n" << endl;
-        n = 25 * (p.C_intelligence/((double)p.M_intelligence)) + 15 * (p.C_sanity/((double)p.M_sanity));
-        p.result += n;
-        cout << "\nBased on your performance, you get: 40/" << n << endl;
-        cout << "\nThis is the end of this semester!\n" << endl;
-        cout << "\nGame Over! Your result is: " << grade(p.result) << endl;
+    if (p.day <= 15) {
+        cout << "\nDeadline of Assignment 1: " << 15-p.day << " day(s) left...\n" << endl;
+        if (p.day == 15) {
+            n = 5 * (p.C_intelligence/((double)p.M_intelligence));
+            p.result += n;
+            cout << "\nBased on your performance, you get: 5/" << n << endl;
+        }
+    } else if (p.day <= 20) {
+        cout << "\nMidterm test: " << 20-p.day << " day(s) left...\n" << endl;
+        if (p.day == 20) {
+            n = 15 * (p.C_intelligence/((double)p.M_intelligence)) + 10 * (p.C_sanity/((double)p.M_sanity));
+            p.result += n;
+            cout << "\nBased on your performance, you get: 25/" << n << endl;
+        }
+    } else if (p.day <= 25) {
+        cout << "\nDeadline of Assignment 2: " << 25-p.day << " day(s) left...\n" << endl;
+        if (p.day == 25) {
+            n = 5 * (p.C_intelligence/((double)p.M_intelligence));
+            p.result += n;
+            cout << "\nBased on your performance, you get: 5/" << n << endl;
+        }
+    } else if (p.day <= 30) {
+        cout << "\nDeadline of Group project: " << 30-p.day << " day(s) left...\n" << endl;
+        if (p.day == 30) {
+            n = 15 * (p.C_favourability/((double)p.M_favourability)) + 5 * (p.C_intelligence/((double)p.M_intelligence));
+            p.result += n;
+            cout << "\nBased on your performance, you get: 20/" << n << endl;
+        }
+    } else if (p.day <= 35) {
+        cout << "\nDeadline of Assignment 3: " << 35-p.day << " day(s) left...\n" << endl;
+        if (p.day == 35) {
+            n = 5 * (p.C_intelligence/((double)p.M_intelligence));
+            p.result += n;
+            cout << "\nBased on your performance, you get: 5/" << n << endl;
+        }
+    } else if (p.day <= 40) {
+        cout << "\nFinal exams: " << 40-p.day << " day(s) left...\n" << endl;
+        if (p.day == 40) {
+            n = 25 * (p.C_intelligence/((double)p.M_intelligence)) + 15 * (p.C_sanity/((double)p.M_sanity));
+            p.result += n;
+            cout << "\nBased on your performance, you get: 40/" << n << endl;
+            cout << "\nThis is the end of this semester!\n" << endl;
+            cout << "\nGame Over! Your result is: " << grade(p.result) << endl;
+        }
     }
 }
 
@@ -179,11 +193,11 @@ int game_start(player p) {
     string anykey;
     double result, difficulty;
     string plan;
-    for (int i = p.day; i < 41; i++) {
-        cout << "\nType in 'C' to continue\n" << endl;
+    for (int i = p.day; i < 42; i++) {
+        cout << "\nType in 'c' to continue\n" << endl;
         cin >> anykey;
-        p.day = i;
         game_initialise(p);
+        // user input to choose today's action and system response.
         cout << "\nwhat are you going to do today? (study, play, rest, /quit, /save_quit)\n" << endl;
         cin >> plan;
         if (plan == "/save_quit") {
@@ -203,7 +217,7 @@ int game_start(player p) {
                 subtract_value(0, p.C_sanity, rand() % 4 + 1);
                 subtract_value(0, p.C_favourability, rand() % 2 + 1);
                 add_value(p.M_intelligence, p.C_intelligence, rand() % 4 + 6);
-            } else if (p.C_intelligence <= 1*p.M_intelligence/4) {
+            } else if (p.C_intelligence <= p.M_intelligence/4) {
                 cout << "\nI hate study!\n" << endl;
                 subtract_value(0, p.C_sanity, rand() % 4 + 11);
                 subtract_value(0, p.C_favourability, rand() % 4 + 6);
@@ -220,7 +234,7 @@ int game_start(player p) {
                 subtract_value(0, p.C_intelligence, rand() % 4 + 1);
                 add_value(p.M_sanity, p.C_sanity, rand() % 4 + 1);
                 add_value(p.M_favourability, p.C_favourability, rand() % 4 + 1);
-            } else if (p.C_favourability <= 1*p.M_favourability/4) {
+            } else if (p.C_favourability <= p.M_favourability/4) {
                 cout << "\nI haven't played with my friends for so long.\n" << endl;
                 subtract_value(0, p.C_intelligence, rand() % 4 + 11);
                 add_value(p.M_sanity, p.C_sanity, rand() % 4 + 1);
@@ -237,7 +251,7 @@ int game_start(player p) {
                 subtract_value(0, p.C_favourability, rand() % 2 + 1);
                 subtract_value(0, p.C_intelligence, rand() % 2 + 1);
                 add_value(p.M_sanity, p.C_sanity, rand() % 4 + 6);
-            } else if (p.C_sanity <= 1*p.M_sanity/4) {
+            } else if (p.C_sanity <= p.M_sanity/4) {
                 cout << "\nThank god that I can have a rest\n" << endl;
                 subtract_value(0, p.C_favourability, rand() % 4 + 6);
                 subtract_value(0, p.C_intelligence, rand() % 4 + 6);
@@ -250,12 +264,19 @@ int game_start(player p) {
             }
         } else {
             cout << "\nWRONG COMMAND!\n" << endl;
-            cout << "\nAll contents are NOT saved...\nType in 'C' to continue\n" << endl;
+            cout << "\nAll contents are NOT saved...\nType in 'c' to continue\n" << endl;
             print_menu();
             choose_option();
             break;
         }
         special_day(p);
+        p.day++;
+        // when san/int/fav is too low or too high, random speical events may occur (20%).
+        if (p.C_sanity <= 30 || p.C_intelligence <= 30 || p.C_favourability <= 30 || p.C_sanity >= 150 || p.C_intelligence >= 120 || p.C_favourability >= 100) {
+            if (rand()%5+0 == 3) {
+                random_task(p);
+            }
+        }
     }
     return 0;
 }
