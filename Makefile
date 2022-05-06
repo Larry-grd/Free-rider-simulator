@@ -17,3 +17,11 @@ freerider_simulator.o: freerider_simulator.cpp print_menu.h print_start_menu.h s
 
 freerider_simulator: freerider_simulator.o save.o game_initialise.o print_start_menu.o print_menu.o
 	g++ $(FLAGS) $^ -o $@
+
+clean:
+	rm freerider_simulator *.o
+
+tar:
+	tar -czvf freerider_simulator.tgz *.cpp *.h
+
+.PHONY: clean tar
