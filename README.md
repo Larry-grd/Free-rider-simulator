@@ -44,7 +44,8 @@ You can choose to study/play/rest during during the game.
 * 'rest' will slightly increase player's sanity and decrease player's intelligence and favourability. 
 e.g. you choose 'study' then you will get some intelligence point and lose some sanity point (the amount of gain or loss is random and it is based on the ratio of the Current_value/Maximum_value.)
 
-4. The total score of the course is 100 and it is separated into four parts: midterm(25%), assignment(15%), group project(20%) and final(40%). These events will occur at some specific rounds of game.
+4.  If you choose play, there will have one game randomly select from two games, one is incomplete sudoku, an other is guess number.
+5.  The total score of the course is 100 and it is separated into four parts: midterm(25%), assignment(15%), group project(20%) and final(40%). These events will occur at some specific rounds of game.
 
 5. Some special events may occur after each game round when Sanity/Intelligence/Favourability is too high or too low. Special events will bring player positive/negative effects and it is randomly decided.
 
