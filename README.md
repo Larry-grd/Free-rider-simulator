@@ -15,6 +15,10 @@ How to complie and play the game?
 *2. Type in "make freerider_simulator".
 *3. Type in "./freerider_simulator" and follow the instructions in the game.
 
+Additional command:
+
+1. you can type "make clean" to remove all .o file and the executable file named freerider_simulator.
+2. you can type "make tar" to tar all the source code and .h file.
 
 Game Background:
 
