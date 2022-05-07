@@ -16,6 +16,9 @@ How to complie and play the game?
 *3. Type in "./freerider_simulator" and follow the instructions in the game.
 
 
+*** The code can be successfully compiled in the Computer Science department's academy11 server.
+
+
 Additional command:
 
 1. you can type "make clean" to remove all .o file and the executable file named freerider_simulator.
