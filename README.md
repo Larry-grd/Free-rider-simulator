@@ -1,6 +1,12 @@
 # Free-rider-simulator
 ENGG1340 GP
 
+Life is hard, but also beautiful.
+Someone works hard, someone becomes freerider...
+You can certainly choose to join those freeriders and enjoy your life,
+but never forget that's your life...
+Please do not regret!
+
 Team members:
 
 Gao Rundong 3035951349
