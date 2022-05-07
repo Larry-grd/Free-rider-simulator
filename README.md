@@ -15,12 +15,10 @@ How to complie and play the game?
 *2. Type in "make freerider_simulator".
 *3. Type in "./freerider_simulator" and follow the instructions in the game.
 
-
 Additional command:
 
 1. you can type "make clean" to remove all .o file and the executable file named freerider_simulator.
 2. you can type "make tar" to tar all the source code and .h file.
-
 
 Game Background:
 
@@ -28,7 +26,6 @@ You are a normal HKU BEng student who accidentally took ENGG1340 with little pro
 Unfortunately, you somehow failed to drop the course before the add & drop period.
 However, your parents are counting on you and if you fail the course you also fail your parents.
 Try your best not to fail the course and balance your study and life.
-
 
 
 Game rule:
@@ -44,8 +41,7 @@ You can choose to study/play/rest during during the game.
 * 'rest' will slightly increase player's sanity and decrease player's intelligence and favourability. 
 e.g. you choose 'study' then you will get some intelligence point and lose some sanity point (the amount of gain or loss is random and it is based on the ratio of the Current_value/Maximum_value.)
 
-4.  If you choose play, there will have one game randomly select from two games, one is incomplete sudoku, an other is guess number.
-5.  The total score of the course is 100 and it is separated into four parts: midterm(25%), assignment(15%), group project(20%) and final(40%). These events will occur at some specific rounds of game.
+4. The total score of the course is 100 and it is separated into four parts: midterm(25%), assignment(15%), group project(20%) and final(40%). These events will occur at some specific rounds of game.
 
 5. Some special events may occur after each game round when Sanity/Intelligence/Favourability is too high or too low. Special events will bring player positive/negative effects and it is randomly decided.
 
@@ -84,16 +80,13 @@ List of features:
 
 
 How each coding element from 1 to 5 listed under the coding requirements have supported your features.
-1. Generation of random game sets or events
-  (random events during the game and different options.) This game have many parts related to random, such as the property of charater,the game that charater play, the task that charater facing. All of those are random. We use rand with time as seed at many place to make the task and game are randomly given.
-2. Data structures for storing game status
-  We also have many sturcture, as the player structure save the property of player which include  char ,int ,and double type variable. The player is the structure in the whole game to record the porperty of the charater. The Task structure include int string and task pointer type variable. Those self-define structure make the program more readable.
+1. Generation of random game sets or events(random events during the game and different options.)
+2. Data structures for storing game status(for special value such as Sanity: store in integer, for ID: store in int array)
 3. Dynamic memory management
-  Our feacture also make a task (e.g. dynamic memory allocation performed by "new" allows to assign memory during runtime using any variable value as size, therefore easy to allocate memory to these special events, when the event has pass, the memory is released and can be used again.)
-We have a linked list of task. As the tasks may happen for many times, the task list, we delete the list after the requied value shows and release the memory.
+(e.g. dynamic memory allocation performed by "new" allows to assign memory during runtime using any variable value as size, therefore easy to allocate memory to these special events, when the event has pass, the memory is released and can be used again.)
 4. File input/output (e.g., for loading/saving game status)
-  (folder named "saving" will contain all unfinished game with an index, game status is stored under each saving folder. When you want to load an existed game, the information of the saving game status will be input to the game and the game will resume.)
-It always use in our game, as the txt file can be edit easily, it is easy to add more task, and for player to customize the task
+(folder named "saving" will contain all unfinished game with an index, game status is stored under each saving folder. When you want to load an existed game, the information of the saving game status will be input to the game and the game will resume.)
 5. Program codes in multiple files.
-  (different events are coded in different files.)
-We separate the code to different file to check every parts easily. It is good for us to put our codes together without too many process.
+(different events are coded in different files.)
+
+ 

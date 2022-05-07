@@ -11,11 +11,14 @@ game_initialise.o: game_initialise.cpp game_initialise.h player.h
 
 save.o: save.cpp save.h player.h
 	g++ $(FLAGS) -c $<
-
-freerider_simulator.o: freerider_simulator.cpp print_menu.h print_start_menu.h save.h player.h game_initialise.h
+	
+random_task.o: random_task.cpp random_task.h player.h
 	g++ $(FLAGS) -c $<
 
-freerider_simulator: freerider_simulator.o save.o game_initialise.o print_start_menu.o print_menu.o
+freerider_simulator.o: freerider_simulator.cpp print_menu.h print_start_menu.h save.h player.h game_initialise.h random_task.h
+	g++ $(FLAGS) -c $<
+	
+freerider_simulator: freerider_simulator.o save.o game_initialise.o print_start_menu.o print_menu.o random_task.o
 	g++ $(FLAGS) $^ -o $@
 
 clean:
