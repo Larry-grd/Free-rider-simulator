@@ -193,7 +193,7 @@ int game_start(player p) {
     string anykey;
     double result, difficulty;
     string plan;
-    for (int i = p.day; i < 42; i++) {
+    for (int i = p.day; i < 41; i++) {
         cout << "\nType in 'c' to continue\n" << endl;
         cin >> anykey;
         game_initialise(p);
@@ -271,6 +271,7 @@ int game_start(player p) {
         }
         special_day(p);
         p.day++;
+        i = p.day;
         // when san/int/fav is too low or too high, random speical events may occur (20%).
         if (p.C_sanity <= 30 || p.C_intelligence <= 30 || p.C_favourability <= 30 || p.C_sanity >= 150 || p.C_intelligence >= 120 || p.C_favourability >= 100) {
             if (rand()%5+0 == 3) {
