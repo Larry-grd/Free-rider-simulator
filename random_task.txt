@@ -1,42 +1,42 @@
 TASK 1 1
-Your mother ask you to go to a mall which is far away from your home.
+*Your mother ask you to go to a mall which is far away from your home.
 1 day has passed...
 TASK 1 1
-You just do not want to do anything today
+*You just do not want to do anything today
 1 day has passed...
 TASK 1 1
-You think you are too stress, thus you come out for relaxing
+*You think you are too stress, thus you come out for relaxing
 1 day has passed...
 TASK 1 1
-It's a beautiful day outside, In days like this, you should come out
+*It's a beautiful day outside, In days like this, you should come out
 1 day has passed...
 TASK 2 -10
-You had a horrible dream, it was shown that your future GPA is 1.6...
+*You had a horrible dream, it was shown that your future GPA is 1.6...
 You feel upset...
 TASK 2 -10
-You find there are 100 bugs in your program.
+*You find there are 100 bugs in your program.
 You feel upset...
 TASK 3 20
-You go to bad at 10 p.m.
+*You go to bad at 10 p.m.
 You seem to become wiser?
 TASK 3 20
-You learn how to use makefile.
+*You learn how to use makefile.
 You seem to become wiser?
 TASK 3 -10
-You go yo sleep at 6 a.m.
+*You go yo sleep at 6 a.m.
 You brain runs slower...
 TASK 3 -10
-You play a game for 16hours continuously.
+*You play a game for 16hours continuously.
 You brain runs slower...
 TASK 4 20
-A super big pigeon is jumping in the street, today should be a happy pigeon day!
+*A super big pigeon is jumping in the street, today should be a happy pigeon day!
 Everyone is happy!
 TASK 4 20
-You help a old woman in supermarket.
+*You help a old woman in supermarket.
 Everyone is happy!
 TASK 4 -10
-You argue with your family members...
+*You argue with your family members...
 People around you try to avoid your sight...
 TASK 4 -10
-You scare a group of pigeon on the street...
+*You scare a group of pigeon on the street...
 People around you try to avoid your sight...

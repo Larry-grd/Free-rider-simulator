@@ -18,7 +18,7 @@ using namespace std;
 
 // declaration of functions
 void choose_option();
-int game_start(player p);
+void game_start(player p);
 
 // function to create a new game.
 void new_game() {
@@ -28,7 +28,7 @@ void new_game() {
     p.M_sanity = ( rand() % 2 + 16 ) * p.ID;
     p.M_intelligence = ( rand() % 2 + 12 ) * p.ID;
     p.M_favourability = ( rand() % 2 + 8 ) * p.ID;
-    p.C_sanity = 2*p.M_sanity/3;
+    p.C_sanity = p.M_sanity;
     p.C_intelligence = 2*p.M_intelligence/3;
     p.C_favourability = 2*p.M_favourability/3;
     p.day = 1;
@@ -189,11 +189,12 @@ void special_day(player &p) {
 }
 
 // function for start the game.
-int game_start(player p) {
+void game_start(player p) {
+    int i = p.day;
     string anykey;
     double result, difficulty;
     string plan;
-    for (int i = p.day; i < 41; i++) {
+    while (i <= 40) {
         cout << "\nType in 'c' to continue\n" << endl;
         cin >> anykey;
         game_initialise(p);
@@ -269,17 +270,16 @@ int game_start(player p) {
             choose_option();
             break;
         }
-        special_day(p);
-        p.day++;
-        i = p.day;
         // when san/int/fav is too low or too high, random speical events may occur (20%).
-        if (p.C_sanity <= 30 || p.C_intelligence <= 30 || p.C_favourability <= 30 || p.C_sanity >= 150 || p.C_intelligence >= 120 || p.C_favourability >= 100) {
+        if (p.C_sanity <= 30 || p.C_intelligence <= 20 || p.C_favourability <= 10 || p.C_sanity >= 100 || p.C_intelligence >= 80 || p.C_favourability >= 60) {
             if (rand()%5+0 == 3) {
                 random_task(p);
             }
         }
+        special_day(p);
+        p.day++;
+        i = p.day;
     }
-    return 0;
 }
 
 // This is the main function.
